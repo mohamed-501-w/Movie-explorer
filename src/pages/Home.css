@@ -15,6 +15,27 @@
     --color-main1: oklch(71.506% 0.17846 27.948);
     --color-main2: oklch(75.157% 0.14687 83.99);
     --color-hover: oklch(66.017% 0.22934 35.391);
+
+    --animate-fade: fade 7.1s linear 1;
+
+    @keyframes fade {
+      0% {
+        translate: -300px;
+        opacity: 0;
+      }
+      10%,90%{
+        translate: 0px;
+        opacity: 1;
+      95%{
+        opacity: 0;
+      }
+
+      }
+      100%{
+        translate: 300px;
+        opacity: 0;
+      }
+    }
 }
 
 

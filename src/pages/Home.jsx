@@ -8,23 +8,35 @@ import {data} from '../data/dummyData'
 function Home() {
   const [trendingList, setTrendingList] = useState(data.results)
 
+  const [heroIndex,setHeroIndex] = useState(0)
+
+  useEffect(()=>{
+    setInterval(()=>{
+    setHeroIndex(prev => (prev + 1 ) % trendingList.length) 
+  }, 7010)
+  },[])
 
   return (
     <>
       {/* hero section big hav a bit of details and rating */}
 
-      <section>
+      <section className='scrollbar-none overflow-auto'>
         <MovieHero 
-        movie={trendingList[2]}/>
+        key={trendingList[heroIndex].id}
+        movie={trendingList[heroIndex]}/>
       </section>
 
       {/* <section trending */}
         
-      <MovieCardsContainer />
+      <MovieCardsContainer 
+      movies={trendingList}
+      title="Trending: "/>
 
       {/* section popular */}
         
-      <MovieCardsContainer />
+      <MovieCardsContainer 
+      movies={trendingList}
+      title="Popular: "/>
     </>
   )
 }
