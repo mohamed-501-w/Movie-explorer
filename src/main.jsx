@@ -12,7 +12,7 @@ createRoot(document.getElementById('root')).render(
       <Route element={<Nav />} >
         <Route index element={<Home />} />
         <Route path='/movie' element={<Movie />} />
-        <Route path='/Favorites' element={<Favorites />} />
+        <Route path='/favorites' element={<Favorites />} />
       </Route>
     </Routes>
   </BrowserRouter>,

@@ -10,7 +10,7 @@ return (
             action="">
 
                 <input 
-                className="flex-1 px-5 py-1 rounded-l-full outline-0 text-primary bg-secondary placeholder:text-primary/50 text-lg" 
+                className="flex-1 px-5 py-1 rounded-l-full outline-0 text-primary bg-secondary placeholder:text-primary/50 text-lg font-bold" 
                 placeholder="Search" 
                 type="text" 
                 name="search"/>
@@ -29,13 +29,13 @@ return (
                     </svg>
                 </button>
             </form>
-                <div className="flex gap-4 text-2xl italic px-2 items-center text-main tracking-widest text-shadow-secondary text-shadow-xs">
+                <div className="flex gap-4 text-2xl  font-black tracking-wider italic text-shadow-md/20 text-shadow-secondary">
                     <NavLink
                     className="px-2.5 py-2 transition-all hover:scale-110 hover:text-hover" 
                     to="/">Home</NavLink>
                     <NavLink 
                     className="px-2.5 py-2 transition-all hover:scale-110 hover:text-hover"
-                    to="/Favorites"> Favorites</NavLink>
+                    to="/favorites"> Favorites</NavLink>
                 </div>
         </nav>
         <Outlet />
