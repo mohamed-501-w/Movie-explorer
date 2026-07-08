@@ -32,10 +32,10 @@ return (
             </form>
                 <div className="flex gap-4 text-2xl  font-black tracking-wider italic text-shadow-md/20 text-shadow-secondary">
                     <NavLink
-                    className={({isActive}) => clsx("px-2.5 py-2 transition-all hover:scale-110 hover:text-hover" , isActive && "text-hover")} 
+                    className={({isActive}) => clsx("px-2.5 py-2 transition-all hover:scale-110 " , isActive && "text-hover")} 
                     to="/">Home</NavLink>
                     <NavLink 
-                    className={({isActive}) => clsx("px-2.5 py-2 transition-all hover:scale-110 hover:text-hover" , isActive && "text-hover")} 
+                    className={({isActive}) => clsx("px-2.5 py-2 transition-all hover:scale-110 " , isActive && "text-hover")} z
                     to="/favorites"> Favorites</NavLink>
                 </div>
         </nav>
