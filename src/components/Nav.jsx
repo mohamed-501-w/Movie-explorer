@@ -1,4 +1,5 @@
 import { Outlet, NavLink } from "react-router";
+import clsx from 'clsx';
 
 export default function Nav() {
 
@@ -31,10 +32,10 @@ return (
             </form>
                 <div className="flex gap-4 text-2xl  font-black tracking-wider italic text-shadow-md/20 text-shadow-secondary">
                     <NavLink
-                    className="px-2.5 py-2 transition-all hover:scale-110 hover:text-hover" 
+                    className={({isActive}) => clsx("px-2.5 py-2 transition-all hover:scale-110 hover:text-hover" , isActive && "text-hover")} 
                     to="/">Home</NavLink>
                     <NavLink 
-                    className="px-2.5 py-2 transition-all hover:scale-110 hover:text-hover"
+                    className={({isActive}) => clsx("px-2.5 py-2 transition-all hover:scale-110 hover:text-hover" , isActive && "text-hover")} 
                     to="/favorites"> Favorites</NavLink>
                 </div>
         </nav>

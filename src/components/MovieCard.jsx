@@ -14,10 +14,10 @@ export default function MovieCard({movie,}){
         
             <Link 
             to={"/movie"}
-            className="relative snap-end  shrink-0 w-1/2  sm:w-1/3 md:w-1/5 lg:w-1/9 drop-shadow drop-shadow-secondary">
+            className="relative snap-end shrink-0 w-1/2 sm:w-1/3 md:w-1/5 lg:w-1/9 drop-shadow drop-shadow-secondary flex">
                 <img 
-                className="rounded-2xl peer my-2 w-[95%] mx-auto" 
-                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+                className="rounded-2xl peer my-2 w-[95%]  mx-auto object-fill" 
+                src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
                 
                 
                 <div className="absolute peer-hover:opacity-100 hover:opacity-100 opacity-0 transition-opacity

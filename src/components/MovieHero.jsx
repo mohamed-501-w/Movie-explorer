@@ -1,10 +1,11 @@
+import clsx from "clsx";
 import { Link } from "react-router";
 
-export default function MovieHero({movie}){
+
+export default function MovieHero({movie, isHome, isMovie}){
     return (
         <Link to='/movie' 
-        className="flex animate-fade justify-center items-center shadow shadow-gr mb-10
-        ">
+        className={clsx("flex justify-center items-center shadow shadow-gr mb-10", isHome &&"animate-fade ", isMovie &&"")}>
             <div className="pl-4 max-w-md shadow "> 
                 <h1 className="text-3xl mb-10 font-black tracking-wider italic text-shadow-lg/20 text-shadow-secondary ">
                     {movie.title}

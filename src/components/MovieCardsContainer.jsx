@@ -15,9 +15,9 @@ export default function MovieCardsContainer({movies ,title}){
     return (
         <>
 
-            <section className="snap-x overflow-x-clip  mx-4 my-8 ">
+            <section className="snap-x overflow-x-clip mx-4 my-8">
                 <h3 className="text-xl font-bold mb-4 text-shadow-secondary text-shadow-xs tracking-wider">{title}</h3>
-                <section className=" flex items-center content-center ">
+                <section className=" flex items-stretch ">
                     {moviesEl}
                 </section>
             </section>

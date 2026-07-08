@@ -23,7 +23,10 @@ function Home() {
       <section className='scrollbar-none overflow-auto'>
         <MovieHero 
         key={trendingList[heroIndex].id}
-        movie={trendingList[heroIndex]}/>
+        movie={trendingList[heroIndex]}
+        isHome={true}
+        isMovie={false}
+        />
       </section>
 
       {/* <section trending */}
