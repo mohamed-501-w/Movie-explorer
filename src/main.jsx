@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import Nav from './components/Nav';
 import Movie from './pages/Movie'
 import Favorites from './pages/Favorites'
-
+import './pages/Home.css'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
