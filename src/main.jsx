@@ -11,7 +11,7 @@ createRoot(document.getElementById('root')).render(
     <Routes>
       <Route element={<Nav />} >
         <Route index element={<Home />} />
-        <Route path='/movie' element={<Movie />} />
+        <Route path='/movie/:id' element={<Movie />} />
         <Route path='/favorites' element={<Favorites />} />
       </Route>
     </Routes>

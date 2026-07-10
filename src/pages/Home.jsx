@@ -6,27 +6,12 @@ import MovieCardsContainer from '../components/MovieCardsContainer'
 import {data} from '../data/dummyData'
 
 function Home() {
-  const [trendingList, setTrendingList] = useState(data.results)
-  const [popularList, setPopularList] = useState(data.results)
+  const [trendingList, setTrendingList] = useState([])
+  const [popularList, setPopularList] = useState([])
   const [heroIndex,setHeroIndex] = useState(0)
-
-//   useEffect(()=>{
-//     const url = 'https://api.themoviedb.org/3/trending/movie/week?language=en-US';
-//   const options = {
-//   method: 'GET',
-//   headers: {
-//     accept: 'application/json',
-//     Authorization: 'api_key 756f392cc1cbe26ce7f4592013fe3375'
-//   }
-// };
-
-// fetch(url, options)
-//   .then(res => res.json())
-//   .then(json => console.log(json))
-//   .catch(err => console.error(err));
-//   },[])
-
-
+  
+  const isEmpty = trendingList.length === 0
+  console.log(isEmpty)
   useEffect( ()=> {
     const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
 
@@ -59,27 +44,31 @@ function Home() {
     }, [])
 
   useEffect(()=>{
-    const timer = setInterval(()=>{
-    setHeroIndex(prev => (prev + 1 ) % trendingList.length) 
-  }, 7010)
-  return () => {
-    clearInterval(timer)
-  }
+    console.log(isEmpty)
+    if(!isEmpty){
+      const timer = setInterval(()=>{
+      setHeroIndex(prev => (prev + 1 ) % trendingList.length) 
+      }, 7010)
+      return () => {
+        clearInterval(timer)
+    }}
+  },[isEmpty])
 
-  },[])
+  
 
   return (
     <>
       {/* hero section big hav a bit of details and rating */}
 
-      <section className='scrollbar-none overflow-auto'>
+      {!isEmpty && <section className='scrollbar-none overflow-auto'>
         <MovieHero 
+      
         key={heroIndex}
         movie={trendingList[heroIndex]}
         isHome={true}
         isMovie={false}
         />
-      </section>
+      </section>}
 
       {/* <section trending */}
         

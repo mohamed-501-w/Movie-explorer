@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { genres } from "../data/genres";
 
-export default function MovieCard({movie,}){
+export default function MovieCard({movie}){
 
 
     const genresEl = genres.filter(genre => {
@@ -13,7 +13,7 @@ export default function MovieCard({movie,}){
         <>
         
             <Link 
-            to={"/movie"}
+            to={`/movie/${movie.id}`}
             className="relative snap-end shrink-0 w-1/2 sm:w-1/3 md:w-1/5 lg:w-1/9 drop-shadow drop-shadow-secondary flex">
                 <img 
                 className="rounded-2xl peer my-2 w-[95%]  mx-auto object-fill" 

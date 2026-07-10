@@ -3,8 +3,7 @@ import MovieCard from "./MovieCard"
 
 
 export default function MovieCardsContainer({movies ,title}){
-
-    const moviesEl =movies.map(movie => (
+    const moviesEl = movies.map(movie => (
     <MovieCard 
     key={movie.id}
     movie={movie}/>
