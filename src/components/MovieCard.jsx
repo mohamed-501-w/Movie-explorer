@@ -16,7 +16,8 @@ export default function MovieCard({movie}){
             to={`/movie/${movie.id}`}
             className="relative snap-end shrink-0 w-1/2 sm:w-1/3 md:w-1/5 lg:w-1/9 drop-shadow drop-shadow-secondary flex">
                 <img 
-                className="rounded-2xl peer my-2 w-[95%]  mx-auto object-fill" 
+                className="rounded-2xl peer my-2 w-[95%]  mx-auto object-fill"
+                loading="lazy"
                 src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
                 
                 
