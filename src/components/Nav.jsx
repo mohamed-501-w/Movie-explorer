@@ -44,7 +44,7 @@ return (
                 className={({isActive}) => clsx("px-2.5 py-2 transition-all hover:scale-110 " , isActive && "text-hover")} 
                 to="/">Home</NavLink>
                 <NavLink 
-                className={({isActive}) => clsx("px-2.5 py-2 transition-all hover:scale-110 " , isActive && "text-hover")} z
+                className={({isActive}) => clsx("px-2.5 py-2 transition-all hover:scale-110 " , isActive && "text-hover")} 
                 to="/favorites"> Favorites</NavLink>
             </div>
         </nav>
