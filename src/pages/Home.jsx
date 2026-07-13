@@ -1,8 +1,8 @@
 import { useState , useEffect} from 'react'
 
 import './Home.css'
-import MovieHero from '../components/MovieHero'
-import MovieCardsContainer from '../components/MovieCardsContainer'
+import HomeHero from '../components/HomeHero'
+import HomeCardsContainer from '../components/HomeCardsContainer'
 import {data} from '../data/dummyData'
 
 function Home() {
@@ -11,7 +11,6 @@ function Home() {
   const [heroIndex,setHeroIndex] = useState(0)
   
   const isEmpty = trendingList.length === 0
-  console.log(isEmpty)
   useEffect( ()=> {
     const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
 
@@ -40,11 +39,13 @@ function Home() {
         .then(json => setPopularList(json.results))
         .catch(err => console.error(err));
 
+      
+
+      
 
     }, [])
 
   useEffect(()=>{
-    console.log(isEmpty)
     if(!isEmpty){
       const timer = setInterval(()=>{
       setHeroIndex(prev => (prev + 1 ) % trendingList.length) 
@@ -57,31 +58,27 @@ function Home() {
   
 
   return (
-    <>
+    <main className=''>
       {/* hero section big hav a bit of details and rating */}
 
-      {!isEmpty && <section className='scrollbar-none overflow-auto'>
-        <MovieHero 
+      {!isEmpty && <HomeHero  
       
         key={heroIndex}
         movie={trendingList[heroIndex]}
-        isHome={true}
-        isMovie={false}
-        />
-      </section>}
+        />}
 
       {/* <section trending */}
         
-      <MovieCardsContainer 
+      <HomeCardsContainer 
       movies={trendingList}
       title="Trending: "/>
 
       {/* section popular */}
         
-      <MovieCardsContainer 
+      <HomeCardsContainer 
       movies={popularList}
       title="Popular: "/>
-    </>
+    </main>
   )
 }
 
