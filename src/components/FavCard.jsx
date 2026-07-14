@@ -3,7 +3,7 @@ import genreList from "../utils/genre"
 
 
 export default function FavCard({movie, removeFromList}) {
-
+    console.log(movie)
     const genresEl = genreList(movie)
 
     return (
@@ -12,7 +12,7 @@ export default function FavCard({movie, removeFromList}) {
 
             <Link 
                 to={`/movie/${movie.id}`}
-                className="relative drop-shadow drop-shadow-secondary">
+                className="relative drop-shadow drop-shadow-secondary ">
                     <img 
                     className="rounded-2xl h-full"
                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="movie poster" />

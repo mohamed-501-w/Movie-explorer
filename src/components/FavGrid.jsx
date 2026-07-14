@@ -11,7 +11,7 @@ export default function FavGrid({movies ,removeFromList}) {
     ))
 
     return (
-        <div className="w-[80%] content-stretch my-10 gap-10 mx-auto grid grid-cols-[repeat(auto-fit,minmax(8rem,1fr))]">
+        <div className="w-[80%] content-stretch my-10 gap-10 mx-auto grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] ">
             {cardEl}
         </div>
     )}
