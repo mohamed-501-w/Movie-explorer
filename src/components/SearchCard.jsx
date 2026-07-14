@@ -7,7 +7,7 @@ export default function SearchCard({movie}) {
         <>
             <Link 
             to={`/movie/${movie.id}`}
-            className="shadow-[1px_3px_6px_-1px] rounded-xl shadow-secondary w-[90%] p-1 max-w-xl mx-auto grid grid-cols-3 ">
+            className="shadow-[1px_3px_6px_-1px] rounded-xl shadow-secondary w-[90%] p-1 max-w-xl mx-auto grid grid-cols-3 items-stretch">
                 <img 
                 className="shrink-0 aspect-9/16 rounded-xl"
                 loading="lazy"

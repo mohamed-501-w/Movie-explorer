@@ -1,11 +1,12 @@
 import FavCard from "./FavCard"
-export default function FavGrid({movies}) {
+export default function FavGrid({movies ,removeFromList}) {
     
     
     const cardEl = movies.map((movie, index) => (
         <FavCard 
         key={movie.id || index}
         movie={movie}
+        removeFromList={removeFromList}
         />
     ))
 

@@ -57,7 +57,7 @@ export default function Search() {
         }, [])
 
     return (
-        <main className="flex my-10 flex-col justify-center gap-8">
+        <main className="flex my-10  flex-col justify-center gap-8">
             <OrderButtons
                 setOldest={setOldest}
                 setNewest={setNewest}
