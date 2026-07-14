@@ -1,3 +1,5 @@
+import dateFormat from "../utils/dateFormat"
+
 export default function MovieDetails({movie}) {
     const genreString = movie.genres && movie.genres.map(el => el.name).join(', ') 
 
@@ -12,9 +14,7 @@ export default function MovieDetails({movie}) {
         }).format(movie.revenue)
 
     
-    const date = new Date(movie.release_date || null)
-
-    const release_date = new Intl.DateTimeFormat("en-US").format(date)
+    const release_date = dateFormat(movie.release_date)
 
     return (
         <div className="p-6 text-lg font-semibold opacity-80 space-y-3 tracking-wider">

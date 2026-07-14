@@ -1,0 +1,16 @@
+import FavCard from "./FavCard"
+export default function FavGrid({movies}) {
+    
+    
+    const cardEl = movies.map((movie, index) => (
+        <FavCard 
+        key={movie.id || index}
+        movie={movie}
+        />
+    ))
+
+    return (
+        <div className="w-[80%] content-stretch my-10 gap-10 mx-auto grid grid-cols-[repeat(auto-fit,minmax(8rem,1fr))]">
+            {cardEl}
+        </div>
+    )}

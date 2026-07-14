@@ -40,7 +40,7 @@ export default function Movie() {
     .catch(err => console.error(err));
 
 
-    }, [id])
+    }, [])
 
 return (
     

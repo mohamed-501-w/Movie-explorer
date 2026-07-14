@@ -1,22 +1,30 @@
-import { Outlet, NavLink } from "react-router";
+import { Outlet, NavLink, useNavigate } from "react-router";
 import clsx from 'clsx';
 import { useState } from "react";
 
 export default function Nav() {
     const[ buttonUsed, setButtonUsed] =useState(false)
+    const navigate = useNavigate()
     function buttonState(){
         setButtonUsed(prev => !prev)
+    }
+
+    function searchMovie(formData){
+        console.log(formData.get("search"))
+        navigate(`/search/${formData.get("search")}`)
     }
 
 return (
     <>
         <nav className="flex border-b border-gray-500 shadow shadow-white/45 py-2.5 px-2 justify-evenly gap-2.5 font-semibold items-center">
-            <form className="md:flex-1 min-w-0 flex md:max-w-1/2 drop-shadow-secondary drop-shadow-sm  rounded-full " 
+            <form 
+                className="md:flex-1 min-w-0 flex md:max-w-1/2 drop-shadow-secondary drop-shadow-sm  rounded-full " 
 
-            action="">
+                action={searchMovie}>
 
                 <input 
-                className="md:flex-1 min-w-0 pl-5 pr-1 py-1 rounded-l-full outline-0 text-primary bg-secondary placeholder:text-primary/50 md:text-base text-sm font-bold" 
+                className="md:flex-1 min-w-0 pl-5 pr-1 py-1 caret-primary rounded-l-full outline-0 text-primary bg-secondary placeholder:text-primary/50 md:text-base text-sm font-bold" 
+                autoComplete="off"
                 placeholder="Search" 
                 type="text" 
                 name="search"/>
@@ -36,27 +44,36 @@ return (
                 </button>
             </form> 
         
-            <button onClick={buttonState} className="xs:hidden mx-2">here</button>
+            <button onClick={buttonState} className="xs:hidden mx-2" aria-label="Toggle menu">
+                {buttonUsed ? '✕' : '☰'}
+            </button>
             
 
             <div className="xs:flex hidden gap-x-4 sm:text-2xl  font-black tracking-wider italic text-shadow-md/20 text-shadow-secondary">
                 <NavLink
-                className={({isActive}) => clsx("px-2.5 py-2 transition-all hover:scale-110 " , isActive && "text-hover")} 
-                to="/">Home</NavLink>
+                
+                    className={({isActive}) => clsx("px-2.5 py-2 transition-all hover:scale-110 " , isActive && "text-hover")} 
+                    to="/">Home
+                </NavLink>
                 <NavLink 
-                className={({isActive}) => clsx("px-2.5 py-2 transition-all hover:scale-110 " , isActive && "text-hover")} 
-                to="/favorites"> Favorites</NavLink>
+                    className={({isActive}) => clsx("px-2.5 py-2 transition-all hover:scale-110 " , isActive && "text-hover")} 
+                    to="/favorites"> Favorites
+                </NavLink>
             </div>
         </nav>
         {buttonUsed && <div
             className="xs:hidden fixed w-screen  z-50 h-screen bg-primary transition-opacity duration-500 opacity-100">
             <div className="flex gap-x-4 flex-col sm:text-2xl  font-black tracking-wider italic text-shadow-md/20 text-shadow-secondary">
                 <NavLink
-                className={({isActive}) => clsx("px-2.5 py-1 transition-all border-b border-gray-500 animate-fadeTop  hover:scale-110 " , isActive && "text-hover")} 
-                to="/">Home</NavLink>
+                    onClick={() =>setButtonUsed(false)}
+                    className={({isActive}) => clsx("px-2.5 py-1 transition-all border-b border-gray-500 animate-fadeTop  hover:scale-110 " , isActive && "text-hover")} 
+                    to="/">Home
+                </NavLink>
                 <NavLink 
-                className={({isActive}) => clsx("px-2.5 py-1 transition-all  border-b border-gray-500 animate-fadeTop hover:scale-110 " , isActive && "text-hover")} z
-                to="/favorites"> Favorites</NavLink>
+                    onClick={() =>setButtonUsed(false)}
+                    className={({isActive}) => clsx("px-2.5 py-1 transition-all  border-b border-gray-500 animate-fadeTop hover:scale-110 " , isActive && "text-hover")} 
+                    to="/favorites"> Favorites
+                </NavLink>
             </div>
         </div>}
         <Outlet />
