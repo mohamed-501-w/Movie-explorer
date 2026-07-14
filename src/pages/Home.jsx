@@ -3,7 +3,7 @@ import { useState , useEffect} from 'react'
 import './Home.css'
 import HomeHero from '../components/HomeHero'
 import HomeCardsContainer from '../components/HomeCardsContainer'
-import {data} from '../data/dummyData'
+
 
 function Home() {
   const [trendingList, setTrendingList] = useState([])
