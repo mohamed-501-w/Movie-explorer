@@ -6,7 +6,6 @@ import { oldestOrder, newestOrder, mostPopularOrder, leastPopularOrder } from ".
 
 export default function Search() {
     const [searchResults, setSearchResults] =useState([])
-    console.log(searchResults)
     const [currentActive, setCurrentActive] = useState("newest")
     
         
@@ -54,7 +53,7 @@ export default function Search() {
             .then(res => setSearchResults(mostPopularOrder(res.results)))
             .catch(err => console.error(err));
     
-        }, [])
+        }, [search])
 
     return (
         <main className="flex my-10  flex-col justify-center gap-8">

@@ -13,7 +13,6 @@ export function oldestOrder(arr) {
 }
 export function mostPopularOrder(arr) {
     return arr.toSorted((a, b) => ( b.popularity - a.popularity));
-r
 }
 export function leastPopularOrder(arr) {
     return arr.toSorted((a, b) => ( a.popularity - b.popularity));

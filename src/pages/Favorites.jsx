@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react"
 import FavGrid from "../components/FavGrid"
 import OrderButtons from "../components/OrderButtons"
-import { data } from "../data/dummyData"
 
 import { oldestOrder, newestOrder ,mostPopularOrder, leastPopularOrder} from "../utils/listOrder"
 export default function Favorites() {
     const [favList, setFavList] = useState(()=> {
         try {
             const temp = localStorage.getItem("fav");
-            return temp !== null ? JSON.parse(temp) : [];
+            return temp !== null ? oldestOrder(JSON.parse(temp)) : [];
         } catch (error) {
             return [];
         }

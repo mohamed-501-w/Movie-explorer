@@ -14,7 +14,7 @@ export default function MovieDetails({movie}) {
             setIsFav(exists);
         }
     }, [movie]);
-    
+
     const genreString = movie.genres && movie.genres.map(el => el.name).join(', ') 
 
     const budget = new Intl.NumberFormat('en-US', {
@@ -47,9 +47,6 @@ export default function MovieDetails({movie}) {
                 const arr = JSON.parse(localStorage.getItem("fav"))
                 localStorage.setItem("fav",JSON.stringify(arr.filter(item => item.id !== movie.id)))
             } 
-            else {
-                localStorage.removeItem("fav")
-            }
         }
     }
 

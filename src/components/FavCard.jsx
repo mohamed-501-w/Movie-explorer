@@ -3,7 +3,6 @@ import genreList from "../utils/genre"
 
 
 export default function FavCard({movie, removeFromList}) {
-    console.log(movie)
     const genresEl = genreList(movie)
 
     return (
@@ -24,7 +23,7 @@ export default function FavCard({movie, removeFromList}) {
                             className="self-center my-auto text-lg italic font-black">{movie.title}
                         </h2>
                         <p 
-                            className="no text-sm font-bold tracking-wide opacity-60 mb-2">Genres: {genresEl}
+                            className="text-sm font-bold tracking-wide opacity-60 mb-2">Genres: {genresEl}
                         </p>
                     </div>
                     
