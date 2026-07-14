@@ -17,7 +17,7 @@ export default function MovieCard({movie}){
                 <img 
                 className="rounded-2xl  my-2 w-[95%]  mx-auto object-fill"
                 loading="lazy"
-                src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} />
+                src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={movie.title} />
                 
                 
                 <div className="absolute  hover:opacity-100 opacity-0 transition-opacity

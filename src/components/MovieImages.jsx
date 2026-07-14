@@ -4,9 +4,9 @@ export default function MovieImages({images}) {
     const imgEl = arr.map((img, index) => <img 
             key={index}
             className="snap-end w-[calc(33%)] sm:w-[calc(20%-4px)]  lg:w-[calc(12.5%-4px)]"
-            src={`https://image.tmdb.org/t/p/original/${img.file_path}`} 
+            src={`https://image.tmdb.org/t/p/w200/${img.file_path}`} 
             alt="img"
-            loading="eager"
+            loading="lazy"
             tabIndex="0" />)
     return (
         <div className="snap-x overflow-x-scroll scroll-smooth custom-scrollbar">
